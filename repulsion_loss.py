@@ -89,7 +89,7 @@ def attraction_term(y_pred, ious_over_truth_boxes, smooth=0.5):
     return tf.reduce_sum(tf.cast(l1_distances, tf.float32)) / tf.cast(tf.shape(y_pred)[1], dtype=tf.float32)
 
 
-def repulsion_term_gt(y_pred, ious_over_truth_boxes, smooth=0.99):
+def repulsion_term_gt(y_pred, ious_over_truth_boxes, smooth):
     _, indices_2highest_iou = tf.nn.top_k(ious_over_truth_boxes[..., 0], k=2)
     ious_over_truth_boxes = ious_over_truth_boxes[..., 1:]
     indices_2highest_iou = indices_2highest_iou[..., 1]
@@ -111,7 +111,7 @@ def repulsion_term_gt(y_pred, ious_over_truth_boxes, smooth=0.99):
     return tf.reduce_sum(ln_distances_for_iog) / tf.cast(tf.shape(y_pred)[1], dtype=tf.float32)
 
 
-def repulsion_term_box(ious, smooth=0.01):
+def repulsion_term_box(ious, smooth):
     iou_over_predicted_indices = tf.where(tf.less(ious, 1.0))
     ious = tf.gather_nd(ious, iou_over_predicted_indices)
 
@@ -121,9 +121,11 @@ def repulsion_term_box(ious, smooth=0.01):
     return dist_sum / tf.maximum(iou_sum, 0.000001)
 
 
-def create_repulsion_loss(alpha=0.5, betta=0.5):
+def create_repulsion_loss(alpha=0.5, betta=0.5,
+                          smooth_rep_gt=0.99, smooth_rep_box=0.01,
+                          objectness_to_filter=0.5):
     def _filter_predictions(y_pred):
-        y_pred_indices = tf.where(tf.greater_equal(y_pred[..., 4], 0.5))
+        y_pred_indices = tf.where(tf.greater_equal(y_pred[..., 4], objectness_to_filter))
         return tf.gather_nd(y_pred, [y_pred_indices])
 
     def _preprocess_inputs(y_true, y_pred):
@@ -138,13 +140,11 @@ def create_repulsion_loss(alpha=0.5, betta=0.5):
 
         return tf.reduce_sum([
             attraction_term(y_pred, ious_over_truth_boxes),
-            alpha * repulsion_term_gt(y_pred, ious_over_truth_boxes),
-            betta * repulsion_term_box(ious)
+            alpha * repulsion_term_gt(y_pred, ious_over_truth_boxes, smooth_rep_gt),
+            betta * repulsion_term_box(ious, smooth_rep_box)
         ])
 
     def _repulsion_loss(y_true, y_pred):
-        # Фильтруем y_pred, оставляя те, у которых IOU > 0,5 хотябы с одним y_true
-
         y_pred = _filter_predictions(y_pred)
         y_true, y_pred = _preprocess_inputs(y_true, y_pred)
 

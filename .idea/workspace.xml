@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea76f246-71bc-4a3f-aa1c-33bc06f9cb90" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repulsion_loss.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/repulsion_loss.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repulsion_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/repulsion_loss.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="repulsion_loss.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="repulsion_loss.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/repulsion_loss.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+            <state relative-caret-position="330">
+              <caret line="123" column="36" lean-forward="true" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
               <folding>
                 <element signature="e#89#990#0" />
                 <element signature="e#1036#1512#0" />
@@ -50,18 +48,12 @@
                 <element signature="e#4065#4305#0" />
                 <element signature="e#4523#4715#0" />
                 <element signature="e#4881#5138#0" />
-                <element signature="e#4951#6268#0" />
-                <element signature="e#5623#5741#0" />
-                <element signature="e#5795#5834#0" />
-                <element signature="e#5254#5771#0" />
-                <element signature="e#5568#5770#0" />
-                <element signature="e#6461#6879#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="repulsion_loss_test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="repulsion_loss_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/repulsion_loss_test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -257,12 +249,6 @@
             <element signature="e#4065#4305#0" />
             <element signature="e#4523#4715#0" />
             <element signature="e#4881#5138#0" />
-            <element signature="e#4951#6268#0" />
-            <element signature="e#5623#5741#0" />
-            <element signature="e#5795#5834#0" />
-            <element signature="e#5254#5771#0" />
-            <element signature="e#5568#5770#0" />
-            <element signature="e#6461#6879#0" />
           </folding>
         </state>
       </provider>
@@ -305,10 +291,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/repulsion_loss_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/repulsion_loss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+        <state relative-caret-position="330">
+          <caret line="123" column="36" lean-forward="true" selection-start-line="123" selection-start-column="36" selection-end-line="123" selection-end-column="36" />
           <folding>
             <element signature="e#89#990#0" />
             <element signature="e#1036#1512#0" />
@@ -323,20 +316,7 @@
             <element signature="e#4065#4305#0" />
             <element signature="e#4523#4715#0" />
             <element signature="e#4881#5138#0" />
-            <element signature="e#4951#6268#0" />
-            <element signature="e#5623#5741#0" />
-            <element signature="e#5795#5834#0" />
-            <element signature="e#5254#5771#0" />
-            <element signature="e#5568#5770#0" />
-            <element signature="e#6461#6879#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/repulsion_loss_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
         </state>
       </provider>
     </entry>
